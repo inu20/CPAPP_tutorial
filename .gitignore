@@ -1,4 +1,4 @@
-# CAP NewCDSProject
+# CAP
 _out
 *.db
 *.db-shm
@@ -10,6 +10,12 @@ default-*.json
 gen/
 node_modules/
 target/
+
+# UI build files
+dist/
+resources/
+app/*/package-lock.json
+
 
 # Web IDE, App Studio
 .che/
