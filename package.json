@@ -7,9 +7,10 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^7",
-    "express": "^4",
     "@sap/cds-hana": "^2",
-    "@sap/xssec": "^3"
+    "@sap/xssec": "^3",
+    "express": "^4",
+    "sqlite": "^5.1.1"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
@@ -40,14 +41,14 @@
           "users": {
             "risk.viewer@tester.sap.com": {
               "password": "initial",
-              "ID": "risk.viewer@tester.sap.com",
+              "id": "risk.viewer@tester.sap.com",
               "roles": [
                 "RiskViewer"
               ]
             },
             "risk.manager@tester.sap.com": {
               "password": "initial",
-              "ID": "risk.manager@tester.sap.com",
+              "id": "risk.manager@tester.sap.com",
               "roles": [
                 "RiskManager"
               ]
@@ -59,6 +60,9 @@
         "db": "hana",
         "auth": "xsuaa"
       }
+    },
+    "hana": {
+      "deploy-format": "hdbtable"
     }
   }
 }
