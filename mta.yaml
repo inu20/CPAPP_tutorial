@@ -141,4 +141,3 @@ build-parameters:
         - npm ci
         - npm install --production
         - npx -p @sap/cds-dk cds build --production
-        - npx rimraf gen/db/src/gen/data
