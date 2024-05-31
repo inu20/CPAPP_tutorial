@@ -25,15 +25,17 @@ service GlobalService @(path: '/global') {
 
   entity OfficeManagers  as
     select
-      Offices.Email        as Office_Email,
-      Offices.Country.code as Country_Code,
-      Offices.Country_Name,
       Users.ID,
-      Users.Full_name
+      Users.Full_name,
+      Users.isManager,
+      Users.Office.ID           as Office_ID,
+      Users.Office.Name         as Office_Name,
+      Users.Office.Email        as Office_Email,
+      Users.Office.Country.code as Country_Code,
+      Users.Office.Country_Name
 
-    from Offices
-    left join Users
-      on Users.ID = 6;
+    from Users
+    where Users.isManager = true;
 
 
   entity Students        as
