@@ -35,6 +35,7 @@ entity Users : managed {
       Email          : String;
       Office         : Association to Offices default 0;
       isManager      : Boolean default false;
+      Enabled        : Boolean default true;
 }
 
 entity Students : managed {
