@@ -1,0 +1,17 @@
+<mvc:View
+  controllerName="project1.controller.employee.EmployeeDetailInfo"
+  xmlns="sap.m"
+  xmlns:f="sap.f"
+  xmlns:mvc="sap.ui.core.mvc">
+  <f:DynamicPage toggleHeaderOnTitleClick="false">
+    <f:title>
+      <f:DynamicPageTitle>
+        <f:heading>
+          <FlexBox wrap="Wrap" fitContainer="true" alignItems="Center">
+            <Title text="{products>text}" wrapping="true" class="sapUiTinyMarginEnd"/>
+          </FlexBox>
+        </f:heading>
+      </f:DynamicPageTitle>
+    </f:title>
+  </f:DynamicPage>
+</mvc:View>

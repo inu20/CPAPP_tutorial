@@ -1,1 +1,36 @@
 /* Enter your custom styles here */
+.fixFlexHorizontal > .sapUiFixFlexFixed {
+	margin-right: .2em;
+}
+
+.fixFlexHorizontal > .sapUiFixFlexFlexible {
+}
+
+.sapMListTblCell > SPAN {
+	display: inline-block;
+	width: 100%;
+}
+.sapMListTblCell:not(:hover) > SPAN {
+	/* white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis; */
+}
+
+html.sap-desktop .sapFDynamicPage.sapFDynamicPageWithScroll .sapFDynamicPageTitleWrapper {
+	right: 18px;
+}
+.ButtonItemDanger {
+	color: red;
+}
+
+html .sapMListTblCell .sapSuiteUiCommonsMicroProcessFlowItem{
+    width: 25px;
+    height: 25px;
+}
+html .sapMListTblCell .sapSuiteUiCommonsMicroProcessFlowItem .sapUiIcon:not(.sapMLIBImgNav):not(.sapMBtnIcon):not(.sapFAvatarTypeIcon){
+    font-size: 1rem;
+}
+
+.sapUiCalendarRowApps {
+	overflow: hidden;
+}

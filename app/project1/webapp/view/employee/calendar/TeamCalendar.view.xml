@@ -1,0 +1,91 @@
+<mvc:View controllerName="project1.controller.employee.calendar.TeamCalendar"
+    xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:unified="sap.ui.unified"
+    displayBlock="true"
+    >
+    
+	<VBox>
+        <PlanningCalendar 
+            id="PlanningCalendar"
+			startDate="{path: 'calendar>/startDate', formatter: '.myformatter.utcToLocalDateTime'}"
+            viewKey="Day"
+            rows="{calendar>/people}"
+            appointmentsVisualization="Filled"
+            appointmentSelect="handleAppointmentSelect"
+            appointmentHeight="Automatic"
+            intervalSelect="handleAppointmentAddWithContext"
+			showIntervalHeaders="true"
+            showEmptyIntervalHeaders="false"
+            stickyHeader="true"
+            >
+            <toolbarContent>
+                <Title text="{calendar>/startDate}" title="H4" ></Title>
+				<Button id="addButton" icon="sap-icon://add" press="handleAppointmentCreate" tooltip="Add"/>
+            </toolbarContent>
+			<views>
+				<PlanningCalendarView
+					key="Day"
+					intervalType="Hour"
+					description="Day"
+					intervalsS="3"
+					intervalsM="6"
+					intervalsL="12"
+					showSubIntervals="true">
+				</PlanningCalendarView>
+				<PlanningCalendarView
+					key="Week"
+					intervalType="Week"
+					description="Week"
+					intervalsS="1"
+					intervalsM="2"
+					intervalsL="7"
+					showSubIntervals="true">
+				</PlanningCalendarView>
+				<PlanningCalendarView
+					key="OneMonth"
+					intervalType="OneMonth"
+					description="Month">
+				</PlanningCalendarView>
+			</views>
+            <rows>
+				<PlanningCalendarRow
+					icon="{ path: 'calendar>pic', formatter: '.myformatter.fixImagePath' }"
+					title="{calendar>name}"
+					text="{calendar>role}"
+					appointments="{path : 'calendar>appointments', templateShareable: false }"
+					intervalHeaders="{path: 'calendar>headers', templateShareable: false}"
+                    enableAppointmentsDragAndDrop="true"
+                    enableAppointmentsResize="true"
+                    enableAppointmentsCreate="true"
+                    appointmentDrop="handleAppointmentDrop"
+                    appointmentDragEnter="handleAppointmentDragEnter"
+                    appointmentResize="handleAppointmentResize"
+                    appointmentCreate="handleAppointmentCreated"
+                    >
+					<appointments>
+						<unified:CalendarAppointment
+							startDate="{ path: 'calendar>start', formatter: '.myformatter.utcToLocalDateTime' }"
+							endDate="{ path: 'calendar>end', formatter: '.myformatter.utcToLocalDateTime' }"
+							icon="{ path: 'calendar>pic', formatter: '.myformatter.fixImagePath' }"
+							title="{calendar>title}"
+							text="{calendar>info}"
+							type="{calendar>type}"
+							tentative="{calendar>tentative}">
+						</unified:CalendarAppointment>
+					</appointments>
+					<intervalHeaders>
+						<unified:CalendarAppointment
+							startDate="{ path: 'calendar>start', formatter: '.myformatter.utcToLocalDateTime' }"
+							endDate="{ path: 'calendar>end', formatter: '.myformatter.utcToLocalDateTime' }"
+							icon="{ path: 'calendar>pic', formatter: '.myformatter.fixImagePath' }"
+							title="{calendar>title}"
+							type="{calendar>type}">
+						</unified:CalendarAppointment>
+					</intervalHeaders>
+				</PlanningCalendarRow>
+            </rows>
+        </PlanningCalendar>
+	</VBox>
+</mvc:View>

@@ -1,0 +1,17 @@
+<mvc:View
+	controllerName="project1.controller.employee.EmployeeList"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc">
+		<List id="employeeList" headerText="{i18n>ListOfAllEmployees}" items="{/Users}">
+			<items>
+				<StandardListItem
+					title="{Forename} {Surname}"
+					description="{ID}"
+					iconDensityAware="false"
+					iconInset="false"
+					type="Navigation"
+					press=".onListItemPressed"/>
+			</items>
+		</List>
+</mvc:View>

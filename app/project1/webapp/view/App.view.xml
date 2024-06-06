@@ -1,7 +1,110 @@
 <mvc:View controllerName="project1.controller.App"
     xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <App id="app">
-    </App>
+    xmlns="sap.m"
+	xmlns:tnt="sap.tnt"
+    height="100%">
+    <tnt:ToolPage
+		id="app" >
+		<tnt:header>
+			<tnt:ToolHeader >
+				<Button
+					id="sideNavigationToggleButton"
+					icon="sap-icon://menu2"
+					type="Transparent"
+					press=".onSideNavButtonPress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+				<Title
+                    text="{navigation>/CurrentPage/title}"
+					level="H2"/>
+				<ToolbarSpacer/>
+				<Button
+					id="errorButton"
+					icon="sap-icon://message-popup"
+					visible="{= ${alerts>/alerts/errors}.length === 0 ? false : true }"
+					type="Transparent"
+					press=".onMessagePopoverPress"
+					tooltip="{i18n>errorButtonTooltip}">
+					<layoutData>
+						<OverflowToolbarLayoutData closeOverflowOnInteraction="false"/>
+					</layoutData>
+				</Button>
+				<Button
+					id="notificationButton"
+					icon="sap-icon://ui-notifications"
+					visible="{= ${alerts>/alerts/notifications}.length === 0 ? false : true }"
+					type="Transparent"
+					press=".onNotificationPress"
+					tooltip="{i18n>notificationButtonTooltip}">
+					<layoutData>
+						<OverflowToolbarLayoutData closeOverflowOnInteraction="false"/>
+					</layoutData>
+				</Button>
+				<Button
+					id="themeButton"
+					icon="sap-icon://palette"
+					type="Transparent"
+					press=".onAppThemePress"
+					tooltip="">
+					<layoutData>
+						<OverflowToolbarLayoutData closeOverflowOnInteraction="false"/>
+					</layoutData>
+				</Button>
+                <Avatar
+                    id="UserAvatar"
+                    displaySize="S"
+                    backgroundColor="Random"
+                    initials="{_UserLoginInfo>/InitName}"
+                    src="{_UserLoginInfo>/PhotoSrc}"
+                    showBorder="true"
+                    class="sapUiTinyMargin"
+                    press="onUserNamePress"
+                    badgeIcon="sap-icon://bell"
+                    badgeValueState="Error"
+                    badgeTooltip= "{_UserLoginInfo>/FullName}"
+                    >
+					<layoutData>
+						<OverflowToolbarLayoutData closeOverflowOnInteraction="false"/>
+					</layoutData>
+                </Avatar>
+			</tnt:ToolHeader>
+		</tnt:header>
+		<tnt:sideContent>
+			<tnt:SideNavigation
+				id="SideNavigation"
+				expanded="true"
+				selectedKey="{navigation>/selectedKey}"
+				itemSelect=".onMenuSelected"
+				>
+				<tnt:NavigationList items="{path: 'navigation>/navigation', templateShareable:true}">
+					<tnt:NavigationListItem
+						id="id_SideMenuItem"
+						text	="{navigation>title}"
+						key		="{navigation>key}"
+						icon	="{navigation>icon}"
+						enabled	="{navigation>enabled}"
+						expanded="{navigation>expanded}"
+						items	="{path: 'navigation>items', templateShareable:true}" >
+						<tnt:NavigationListItem
+							text	="{navigation>title}"
+							key		="{navigation>key}"
+							enabled	="{navigation>enabled}" />
+					</tnt:NavigationListItem>
+				</tnt:NavigationList>
+				<tnt:fixedItem>
+					<tnt:NavigationList>
+						<tnt:NavigationListItem icon="chain-link"	text="{i18n>DisplayNotFound}" 		select=".onDisplayNotFound" />
+						<tnt:NavigationListItem icon="history"		text="History" 						select=".onNavToExamplePage" />
+					</tnt:NavigationList>
+				</tnt:fixedItem>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+		<tnt:mainContents>
+			<App id="MainContentParent"/>
+		</tnt:mainContents>
+    </tnt:ToolPage>
+
 </mvc:View>

@@ -1,0 +1,66 @@
+ID,Country_code,Name,Email
+1,TW,Tainan,tainan@intake.education
+2,TW,Taichung,taichung@intake.education
+5,TW,Hsinchu,hsinchu@intake.education
+6,TW,Taoyuan,taoyuan@intake.education
+7,TW,Kaohsiung,kaohsiung@intake.education
+10,CN,Shanghai,suhayter@intake.education
+11,UK,Oxford,uk@intake.education
+12,CN,Chongqing,chongqing@intake.education
+13,VN,Hanoi,hanoi@isc-intake.com
+14,CN,Nanjing,application_nj@ukeas-china.com
+15,CN,ZJGJH,shanghai@intake.education
+18,CN,WUJD,shanghai@intake.education
+19,CN,SZQL,shanghai@intake.education
+20,CN,HZKY,shanghai@intake.education
+25,CN,Beijing,beijing@intake.education
+26,CN,GDQY,shanghai@uekas.com.cn
+27,CN,ZJSD,shanghai@intake.education
+29,CN,CB,shanghai@intake.education
+30,CN,Hangzhou,application_hz@ukeas-china.com
+31,CN,Guangzhou,guangzhou@intake.education
+32,CN,Chengdu,chengdu@intake.education
+33,VN,"Ho Chi Minh",hochiminh@isc-intake.com
+34,CN,Ningbo,
+35,CN,Wuhan,wuhan@intake.education
+36,TW,Keelung,ariel@intake.education
+37,CN,Qingdao,qingdao@intake.education
+38,TW,"Taipei Zhongxiao",taipei.office@intake.education
+40,CN,HFGJ,nancy_xu2010@yahoo.cn
+41,PH,Manila,manila@intake.education
+42,CN,Taizhou,taizhou@intake.education
+43,NG,Ikeja,ikeja@intake.education
+44,CN,Xian,xian@intake.education
+45,NG,Abuja,abuja@intake.education
+46,NG,Ibadan,ibadan@intake.education
+47,CN,GSO,
+48,TW,"Taipei Chung Shan",chungshan@intake.education
+49,TW,Miscellaneous,tpces@intake.education
+50,VN,"Hanoi West",hanoiwest@isc-intake.com
+51,NG,Enugu,enugu@intake.education
+52,TW,"Taipei Banqiao",banqiao@intake.education
+53,NG,Port-Harcourt,ph@intake.education
+54,GH,"Accra - Osu",accra@intake.education
+58,CN,"Ningbo South",application_nbsouth@ukeas-china.com
+59,CN,"Shanghai North",application_shnorth@ukeas-china.com
+60,CN,"Suzhou East",application_szeast@ukeas-china.com
+61,CN,Shenzhen,shenzhen@ukeas-china.com
+62,NG,"Victoria Island",vi@intake.education
+63,CN,Tianjin,kelly_han@ukeas-china.com
+64,TW,Ops,taipei.office@intake.education
+66,CN,Jinan,yolanda_gao@ukeas-china.com
+67,MY,"Kota Kinabalu",kota.kinabalu@intake.education
+68,TH,Bangkok,bangkok@intake.education
+71,NG,Kano,kano@intake.education
+75,GH,Kumasi,kumasi@intake.education
+77,MY,Kuching,kuching@intake.education
+78,IN,"New Delhi",newdelhi@intake.education
+79,GH,"Accra - East Legon",accra@intake.education
+80,IN,Mumbai,mumbai@intake.education
+81,IN,Bangalore,bangalore@intake.education
+82,IN,Pune,pune@intake.education
+83,KE,Nairobi,miriam.gunda@intake.education
+84,NG,"Nasarawa - Virtual Office",
+85,GH,"Takoradi - Virtual Office",
+86,ET,"Addis Ababa",
+87,PH,Cebu,cebu@intake.education

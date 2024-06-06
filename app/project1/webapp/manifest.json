@@ -21,7 +21,29 @@
         "type": "OData",
         "settings": {
           "annotations": [],
+          "localUri": "localService/metadata.xml",
           "odataVersion": "4.0"
+        }
+      },
+      "navigation": {
+        "uri": "model/navigation.json",
+        "type": "JSON"
+      },
+      "mountains": {
+        "uri": "model/mountains.json",
+        "type": "JSON"
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "Semantic-Action": {
+          "semanticObject": "Semantic",
+          "action": "Action",
+          "title": "{{flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
         }
       }
     }
@@ -40,27 +62,40 @@
       "desktop": true,
       "tablet": true,
       "phone": true
-    }
+    },
+    "supportedThemes": [
+      "sap_hcb",
+      "sap_bluecrystal",
+      "sap_fiori_3",
+      "sap_horizon"
+    ]
   },
   "sap.ui5": {
     "flexEnabled": true,
     "dependencies": {
       "minUI5Version": "1.124.1",
       "libs": {
+        "sap.f": {},
         "sap.m": {},
         "sap.ui.core": {},
-        "sap.f": {},
-        "sap.suite.ui.generic.template": {},
         "sap.ui.comp": {},
         "sap.ui.generic.app": {},
         "sap.ui.table": {},
-        "sap.ushell": {}
+        "sap.ui.webc.fiori": {},
+        "sap.ui.layout": {},
+        "sap.ushell": {},
+        "sap.uxap": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.suite.ui.microchart": {
+          "lazy": true
+        }
       }
     },
     "contentDensities": {
       "compact": true,
       "cozy": true
     },
+    "handleValidation": true,
     "models": {
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
@@ -72,10 +107,19 @@
         "dataSource": "mainService",
         "preload": true,
         "settings": {
+          "synchronizationMode": "None",
           "operationMode": "Server",
           "autoExpandSelect": true,
           "earlyRequests": true
         }
+      },
+      "navigation": {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "navigation"
+      },
+      "mountains": {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "mountains"
       }
     },
     "resources": {
@@ -88,29 +132,218 @@
     "routing": {
       "config": {
         "routerClass": "sap.m.routing.Router",
-        "viewType": "XML",
-        "async": true,
-        "viewPath": "project1.view",
+        "controlId": "MainContentParent",
         "controlAggregation": "pages",
-        "controlId": "app",
+        "type": "View",
+        "viewType": "XML",
+        "viewPath": "project1.view",
+        "async": true,
+        "bypassed": {
+          "target": [
+            "NotFound"
+          ]
+        },
         "clearControlAggregation": false
       },
       "routes": [
         {
-          "name": "RouteView1",
+          "pattern": "",
+          "name": "home",
+          "target": [
+            "home"
+          ]
+        },
+        {
+          "pattern": "Statistics",
+          "name": "statistics",
+          "target": [
+            "statistics"
+          ]
+        },
+        {
           "pattern": ":?query:",
+          "name": "RouteView1",
           "target": [
             "TargetView1"
+          ]
+        },
+        {
+          "pattern": "sap_example",
+          "name": "ExamplePage",
+          "target": [
+            "sap_example"
+          ]
+        },
+        {
+          "pattern": "employees/list:layout:",
+          "name": "employeeList2",
+          "target": [
+            "employeeList2",
+            "employeeDetail"
+          ]
+        },
+        {
+          "pattern": "employees/{product}/detail/{layout}",
+          "name": "employeeDetail",
+          "target": [
+            "employeeList2",
+            "employeeDetail"
+          ]
+        },
+        {
+          "pattern": "employees/{product}/detail/{supplier}/{layout}",
+          "name": "employeeDetailInfo",
+          "target": [
+            "employeeList2",
+            "employeeDetail",
+            "employeeDetailInfo"
+          ]
+        },
+        {
+          "pattern": "sap_example2",
+          "name": "ExamplePage2",
+          "target": [
+            "sap_example2"
+          ]
+        },
+        {
+          "pattern": "employees1",
+          "name": "employees1",
+          "target": [
+            "employees1"
+          ]
+        },
+        {
+          "pattern": "employees",
+          "name": "employeeList",
+          "target": [
+            "employees"
+          ]
+        },
+        {
+          "pattern": "employees/overview",
+          "name": "employeeOverview",
+          "target": [
+            "employeeOverviewContent"
+          ]
+        },
+        {
+          "pattern": "employees/calendar",
+          "name": "teamCalendar",
+          "target": [
+            "teamCalendar"
+          ]
+        },
+        {
+          "pattern": "employees/{employeeId}/admin",
+          "name": "employee",
+          "target": [
+            "employee"
+          ]
+        },
+        {
+          "pattern": "employees/{employeeId}/calendar",
+          "name": "employeeCalendar",
+          "target": [
+            "employeeCalendar"
+          ]
+        },
+        {
+          "pattern": "employees/{employeeId}/resume:?query:",
+          "name": "employeeResume",
+          "target": [
+            "employeeResume"
           ]
         }
       ],
       "targets": {
-        "TargetView1": {
-          "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "View1",
-          "viewName": "View1"
+        "home": {
+          "viewId": "home",
+          "viewName": "Home"
+        },
+        "NotFound": {
+          "viewId": "NotFound",
+          "viewName": "NotFound"
+        },
+        "statistics": {
+          "viewId": "statistics",
+          "viewName": "Statistics"
+        },
+        "employees": {
+          "viewId": "employeeList",
+          "viewPath": "project1.view.employee",
+          "viewName": "EmployeeList"
+        },
+        "employeeOverviewContent": {
+          "viewId": "employeeOverviewContent",
+          "viewPath": "project1.view.employee.overview",
+          "viewName": "EmployeeOverviewContent"
+        },
+        "employee": {
+          "viewId": "employee",
+          "viewPath": "project1.view.employee",
+          "viewName": "Employee"
+        },
+        "employeeResume": {
+          "viewId": "resume",
+          "viewPath": "project1.view.employee",
+          "viewName": "Resume",
+          "transition": "flip"
+        },
+        "teamCalendar": {
+          "viewId": "teamCalendar",
+          "viewPath": "project1.view.employee.calendar",
+          "viewName": "TeamCalendar"
+        },
+        "employeeCalendar": {
+          "viewId": "employeeCalendar",
+          "viewPath": "project1.view.employee.calendar",
+          "viewName": "StaffCalendar"
+        },
+        "sap_example_": {
+          "id": "sap_example_",
+          "name": "project1.view.Mountains",
+          "level": 2
+        },
+        "sap_example": {
+          "viewId": "sap_example",
+          "viewPath": "project1.view",
+          "viewName": "Mountains"
+        },
+        "sap_example2": {
+          "viewId": "sap_example2",
+          "viewPath": "project1.view",
+          "viewName": "ValueHelpDialog"
+        },
+        "Employee_ColumnLayout": {
+          "viewId": "Employee_ColumnLayout",
+          "viewPath": "project1.view",
+          "viewName": "employee.Employee_ColumnLayout",
+          "level": 2
+        },
+        "employeeList2": {
+          "viewId": "employeeList2",
+          "viewPath": "project1.view",
+          "viewName": "employee.EmployeeList2",
+          "parent": "Employee_ColumnLayout",
+          "controlId": "flexibleColumnLayout",
+          "controlAggregation": "beginColumnPages"
+        },
+        "employeeDetail": {
+          "viewId": "employeeDetail",
+          "viewPath": "project1.view",
+          "viewName": "employee.EmployeeDetail",
+          "parent": "Employee_ColumnLayout",
+          "controlId": "flexibleColumnLayout",
+          "controlAggregation": "midColumnPages"
+        },
+        "employeeDetailInfo": {
+          "viewId": "employeeDetailInfo",
+          "viewPath": "project1.view",
+          "viewName": "employee.EmployeeDetailInfo",
+          "parent": "Employee_ColumnLayout",
+          "controlId": "flexibleColumnLayout",
+          "controlAggregation": "endColumnPages"
         }
       }
     },

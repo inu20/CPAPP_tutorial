@@ -1,0 +1,25 @@
+<mvc:View
+	controllerName="project1.controller.employee.Employee"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+	<Page
+		id="employeePage"
+		title="{i18n>EmployeeAdmin} | {ID}: {Full_name}"
+		showNavButton="true"
+		navButtonPress=".onNavBack"
+		class="">
+		<headerContent>
+			<Link text="{i18n>FlipToResume}" tooltip="{i18n>FlipToResume.tooltip}" press=".onShowResume"/>
+		</headerContent>
+		<content>
+			<mvc:XMLView viewName="project1.view.employee.EmployeeAdmin"/>
+		</content>
+	</Page>
+</mvc:View>

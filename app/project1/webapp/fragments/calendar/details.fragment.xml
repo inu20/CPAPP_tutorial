@@ -1,0 +1,29 @@
+<core:FragmentDefinition
+		xmlns="sap.m"
+		xmlns:f="sap.ui.layout.form"
+		xmlns:core="sap.ui.core">
+	<ResponsivePopover
+			id="detailsPopover"
+            icon="{calendar>pic}"
+			title="{calendar>title}"
+			class="sapUiContentPadding"
+			placement="Auto">
+		<beginButton>
+			<Button text="Delete" type="Reject" press="handleDeleteAppointment" />
+		</beginButton>
+		<endButton>
+			<Button text="Edit"   type="Emphasized" press="handleEditButton" />
+		</endButton>
+		<f:SimpleForm
+				editable="false"
+				layout="ResponsiveGridLayout"
+				singleContainerFullSize="false">
+			<Label text="Additional information" labelFor="moreInfoText"/>
+			<Text id="moreInfoText" text="{calendar>info}"/>
+			<Label text="From" labelFor="startDateText"/>
+			<Text id="startDateText" text="{path: 'calendar>start', formatter: '.myformatter.utcToLocalDateTime'}"/>
+			<Label text="To" labelFor="endDateText"/>
+			<Text id="endDateText" text="{path: 'calendar>end', formatter: '.myformatter.utcToLocalDateTime'}"/>
+		</f:SimpleForm>
+	</ResponsivePopover>
+</core:FragmentDefinition>

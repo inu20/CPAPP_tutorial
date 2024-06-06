@@ -1,0 +1,240 @@
+ID,Forename,Surname,Email,Office_ID,isManager,Enabled
+6,Sean,Jones,sean.jones@intake.education,2,true,true
+13,Joy,Luo,hsinchu@intake.education,5,true,true
+30,Su,Hayter,su.hayter@intake.education,11,true,true
+45,Kathy,Ho,kathy@intake.education,49,false,false
+47,Rose,Hsu,rose.hsu@intake.education,64,false,true
+58,Ling,Chang,ling@intake.education,49,false,false
+60,Anita,Huang,anita@intake.education,2,true,true
+74,Tim,Greenwood,outreach@intake.education,1,false,true
+75,Graham,Holdaway,graham@intake.education,64,false,true
+91,Chieh,Sung,chieh@intake.education,2,false,true
+92,Catherine,Chang,catherine@intake.education,38,false,true
+101,Yin,Lee,yin@intake.education,38,true,true
+129,Tracy,Lin,tracy.lin@intake.education,2,false,true
+149,Kathy,Cheng,kathy.cheng@intake.education,1,true,true
+181,Iris,Huang,iris.huang@intake.education,1,false,true
+241,Peggy,Liao,banqiao@intake.education,52,true,true
+265,Ariel,Wu,ariel@intake.education,38,false,true
+412,Eileen,Yang,eileen.yang@intake.education,38,false,true
+498,Chinwe,David-Inyang,chinwe@intake.education,62,true,true
+501,Racheal,Akarator,racheal@intake.education,43,false,true
+502,Dapo,Oyeyemi,O.A.Oyeyemi@adm.leeds.ac.uk,43,false,true
+577,Imaobong,Odegbo-Olukoya,abuja@intake.education,45,true,true
+625,Annie,Chen,chungshan@intake.education,48,false,false
+654,Intake," Ibadan Office",adebukola@intake.education,46,true,true
+661,Vicky,Chien,vicky.chien@intake.education,2,false,true
+662,Festus,Nwabuiro,festus@intake.education,45,false,true
+667,G,Test,it-department2@intake.education,49,false,false
+674,Josephine,Chen,josephine@intake.education,2,false,true
+683,Maria,Folorunsho,maria.folorunsho@intake.education,45,false,true
+715,Marie-Stella,Tsetse,marie.stella@intake.education,79,true,true
+747,Anthea,Shih,anthea.shih@intake.education,1,false,true
+756,Enugu,Manager,chasisanne@yahoo.com,51,true,true
+781,Damilare,Gbodimowo,d.gbodimowo@kent.ac.uk,43,false,true
+803,Stella,Stella,taipeiapps2@intake.education,49,false,false
+841,Theresa,Adegbusi,vi@intake.education,62,true,true
+899,Abigail,Yakubu,kent@intake.education,43,false,true
+919,Nnadozie,Ebe,martins@intake.education,53,true,true
+924,Maxine,Chung,maxine.chung@intake.education,38,true,true
+936,Jackie,Lin,jackie.lin@intake.education,2,false,true
+937,Julia,Chen,banqiao-ca@intake.education,52,false,true
+938,Annabelle,Kuo,annabelle.kuo@intake.education,38,false,true
+940,Isabella,Brotonel,isabella.brotonel@intake.education,41,true,true
+941,Angela,Lin,angela.lin@intake.education,1,false,true
+947,Stiev,Huang,stiev.huang@intake.education,38,true,true
+977,Owen,Du,adm@dns-edu.com,49,false,false
+990,Yewande,Adewale,yewande@intake.education,43,false,true
+1000,Melanie,Lin,melanie@intake.education,64,true,true
+1027,Ruangrath,Menapun,ruangrath@intake.education,68,false,true
+1028,Siriporn,Mongkolnimitying,siriporn@intake.education,68,false,true
+1034,Kanyarat,Puttakunmetta,kanyarat@intake.education,68,false,true
+1037,Chonticha,Urmsaard,chonticha@intake.education,68,false,true
+1056,Belle,Yuzon,belle.yuzon@intake.education,41,false,true
+1068,Nkechi,AYOGU,ph@intake.education,53,true,true
+1075,MKT,Intern,marketing@intake.education,64,false,true
+1090,Emily,Tai,emily.tai@intake.education,2,false,true
+1093,Blessing,Egbe,blessing.egbe@abdn.ac.uk,62,false,true
+1096,Edward,Bassey,nigeria@southwales.ac.uk,62,false,true
+1122,Titobioluwa,Oshinyimika,adenike.giwa@intake.education,62,false,true
+1148,Kemisola,Kehinde,kemisola@intake.education,43,false,true
+1149,Lydia,Opoku-Boakye,lydia.boakye@intake.education,54,true,true
+1150,Jessica,Hsiao,jessica.hsiao@intake.education,7,false,true
+1154,Pieter,Funnekotter,pieter.funnekotter@intake.education,64,false,true
+1166,Esther,"Amuchie (Igeweh)",esther.i@intake.education,43,false,true
+1167,Abubakar,Iliyasu,kano@intake.education,71,true,true
+1172,Shiny,Feng,shiny.feng@intake.education,38,false,true
+1179,Olalekan,Ogunniyi,ikeja@intake.education,43,true,true
+1193,Willa,Willa,willa@iae-taiwan.net,49,false,false
+1198,Oluwadamilola,Sule,damilola@intake.education,84,false,true
+1207,Abigail,Nyame,abigail.nyame@intake.education,85,false,true
+1209,"Afiah Sikka",Quaye,afiahsikka.quaye@intake.education,79,false,true
+1241,Mayowa,"Osonuga Intern (1)",mayowa.osonuga@intake.education,43,false,true
+1242,Somtochukwu,"Nnabuife Intern (2)",somtochukwu.nnabuife@intake.education,43,false,true
+1243,Chinonye,Gubor,chinonye.gubor@intake.education,43,false,true
+1244,Grace,Aiyemidun,grace.aiyemidun@intake.education,43,false,true
+1251,Richesa,Carandang,chesa.carandang@intake.education,41,false,true
+1265,Anne,Lee,Anne.lee@intake.education,38,false,true
+1274,Intern,1,domeeome30@gmail.com,79,false,true
+1276,Intern,3,addopatricia28@gmail.com,79,false,true
+1277,Elizabeth,Gordon,elizabeth.gordon@intake.education,54,false,true
+1278,Emmanuel,"Achor Intern (3)",emmanuel.achor@intake.education,43,false,true
+1279,Ademola,"Ayun Intern (4)",ademola.ayun@intake.education,62,false,true
+1280,Bolatito,Olatunbosun,bolatito.olatunbosun@intake.education,43,false,true
+1281,Chioma,Martins,chioma.martins@intake.education,43,false,true
+1282,ABJ,1,jcomolade@gmail.com,45,false,true
+1284,ABJ,3,okoyecollins115@gmail.com,45,false,true
+1285,ABJ,4,akerelehelen15@gmail.com,45,false,true
+1299,Damilola,Oyegoke,d.oyegoke@shu.ac.uk,62,false,true
+1300,Yetunde,Odumosu,y.odumosu@shu.ac.uk,43,false,true
+1301,Elaine,Lin,elaine.lin@intake.education,2,false,true
+1310,Issifou,Dore,issifou.dore@intake.education,75,true,true
+1312,Michael,Day,michael.day@intake.education,68,false,true
+1313,Ceri,Fenton,uk@intake.education,11,false,true
+1314,Atchalee,Auewannakun,atchalee@intake.education,68,false,true
+1316,Orpan,Thong-On,orapan@intake.education,68,false,true
+1318,Andy,Liu,andy.liu@intake.education,7,false,true
+1327,"Elizabeth Olushola",Ajiwaye,elizabeth.a@intake.education,62,false,true
+1330,Maureen,Isibor,maureen@intake.education,53,false,true
+1335,Destiny,Eke,destiny.e@intake.education,62,false,true
+1336,Oluwajuwon,Awodeji,oluwajuwon.a@intake.education,43,false,true
+1337,Sarah,Abe,sarah.a@intake.education,43,false,true
+1340,Temiloluwa,Ige,temi@intake.education,53,false,true
+1346,Ila,Balodi,Ila.Balodi@intake.education,78,true,true
+1348,Chloe,Liu,chloe.liu@intake.education,6,false,true
+1354,Ellie,Chen,ellie.chen@intake.education,38,false,true
+1357,Novella,Chen,novella.chen@intake.education,38,false,true
+1359,UKEAS,CA,ukeasieltsCA@intake.education,3,false,false
+1367,Selase,Adzima,selase.adzima@intake.education,54,false,true
+1374,Shrreya,Lalla,shrreya.lalla@intake.education,78,false,true
+1379,Deborah,Asogwa,deborah@intake.education,45,false,true
+1380,Joseph,Ekunola,Joseph@intake.education,62,false,true
+1384,"Adebukola ",Ajibade,ibadan@intake.education,46,true,true
+1387,Festus,Adeniyi,festus.adeniyi@intake.education,45,false,true
+1391,Golden,Apple,weiwei@intake.education,11,false,true
+1396,Tolani,Shodeinde,tolani@intake.education,43,false,true
+1399,Nwachukwu,Chinenye,chinenye@intake.education,51,false,true
+1400,Cynthia,Su,Cynthia.su@intake.education,38,false,true
+1405,"Joanna ",Alejandro,joanna.alejandro@intake.education,41,false,true
+1406,Kezia,Amattey,kezia.amattey@intake.education,79,false,true
+1411,Sandy,WU,sandy.wu@intake.education,6,false,true
+1414,Alberta,Badu,alberta.badu@intake.education,79,false,true
+1415,"Henry Benjamin",Dawson-Amoah,henry.dawson@intake.education,79,false,true
+1422,"PH Intern ",One,gabrihinogodwin@yahoo.com,53,false,true
+1423,"Enugu Intern",1,conversionteamen1@intake.education,51,false,true
+1424,"Kano Intern",1,ConversionteamKN@intake.education,71,false,true
+1426,Yeboah,Michael,michael.yeboah@intake.education,54,false,true
+1430,"Ibadan Intern",1,ConversionteamIB@intake.education,46,false,true
+1432,Mensah,Gifty,gifty.mensah@intake.education,75,false,true
+1438,Anas,Baig,anas@intake.education,78,false,true
+1439,Laura,Guo,laura.guo@intake.education,38,false,true
+1466,"Katy ",Tseng,katy.tseng@intake.education,38,false,true
+1472,Placidalex,Fernandes,placidalex.fernandes@intake.education,80,false,true
+1474,Ozara,Siao,ozara.siao@intake.education,41,false,true
+1476,Goodness,Akarator,goodness@intake.education,62,false,true
+1482,Omowumi,Adekuoroye,frontdeskvi@intake.education,62,false,true
+1483,"Tobi Isaac",Adedeji,tobi.a@intake.education,43,false,true
+1484,Anthony,DIAI,anthony.d@intake.education,43,false,true
+1485,Chigozirim,NJOKU,walter@intake.education,53,false,true
+1487,Blossom,Nwangwu,blossom@intake.education,45,false,true
+1488,Stephanie,Akoh,stephanie@intake.education,45,false,true
+1489,Lucy,Izekor,lucy@intake.education,45,false,true
+1492,"Pauline ",Odoje,pauline@intake.education,45,false,true
+1494,Chang,Kanata,kanata.chang@intake.education,38,false,true
+1498,"Sarayut ",Rotrattanarak,sarayut@intake.education,68,true,true
+1509,Tolulope,Kolawole,tolulope@intake.education,46,false,true
+1510,"Oluwafemi ",Aboluje,oluwafemi.a@intake.education,46,false,true
+1512,Miriam,Gunda,miriam.gunda@intake.education,83,true,true
+1515,intern,"Kumasi office",Intern.Kumasi@intake.education,75,false,true
+1516,"Dora Boatemaa",Kissi,dora.kissi@intake.education,79,false,true
+1531,Julliet,Owusu-Ansah,julliet.owusu@intake.education,75,false,true
+1534,"Kabir Muhammed",Shuaibu,kabir@intake.education,71,false,true
+1548,Thananan,Suwanyusiri,thananan@intake.education,68,false,true
+1559,Joan,Apeh,joan.apeh@intake.education,43,false,true
+1561,Nneoma,Onyeukwu,nneoma@intake.education,43,false,true
+1562,Oluwadamilola,Otunla,dami.otunla@intake.education,43,false,true
+1570,Collins,Agaza,collins.a@intake.education,62,false,true
+1572,"Victor Chibuzor","Okeh ",Victor.o@intake.education,62,false,true
+1573,"Collins ","Onyema Agaza ",collins.a@intake.education,62,false,true
+1574,"IMMACULATA CHINAGOROM",ODOH,immaculata@intake.education,51,false,true
+1575,ABJ,5,rubieyan@gmail.com,45,false,true
+1576,Steffi,Chen,steffi.chen@intake.education,1,false,true
+1582,Charity,Nyakpeni,charity.nyakpeni@intake.education,54,false,true
+1585,Genevieve,Bacolod,genevieve.bacolod@intake.education,41,false,true
+1595,"Andrea ",Lee,andrea.lee@intake.education,38,false,true
+1596,"Fredrick Wouland",Tuyee,fredrick.tuyee@intake.education,54,false,true
+1598,"PH Intern",Two,chindaemmanuella@gmail.com,53,false,true
+1606,Silsupa,Poolmee,silsupa@intake.education,68,false,true
+1615,Ticha,Acharamongkol,ticha@intake.education,68,false,true
+1617,Adekunle,Oyesanya,adekunle.o@intake.education,62,false,true
+1620,"Zita Akumu",Odhiambo,zita.akumu@intake.education,83,false,true
+1622,Eliud,Kemboi,eliud.kemboi@intake.education,83,false,true
+1623,Nivian,Anyango,nivian.anyango@intake.education,83,false,true
+1626,"AJ Andrea",Gan,ajandrea.gan@intake.education,41,false,true
+1629,Sanskriti,Sharma,sanskriti.sharma@intake.education,78,false,true
+1630,Gola,Kartik,kartik.gola@intake.education,78,false,true
+1633,Juana,Appiah,juana.appiah@intake.education,79,false,true
+1638,Manish,Parmar,manish.parmar@intake.education,78,false,true
+1645,Stephanie,Ebibi,stephanie.ebibi@intake.education,71,false,true
+1646,Fadilat,Yahaya,fadilat@intake.education,71,false,true
+1649,"Jennifer Mawushie",Tetteh,JenniferUSW@intake.education,79,false,true
+1650,Hubertine,Akamah,hubertine.akamah@intake.education,54,false,true
+1651,Charlene,Wang,charlene.wang@intake.education,38,false,true
+1656,Akanksha,Sharma,akanksha.sharma@intake.education,78,false,true
+1660,"Blessing Chidiogo",Nwuba,blessing.usw@intake.education,62,false,true
+1669,Fatima,Osuji,fatima.osuji@intake.education,45,false,true
+1670,Favour,Anyalewechi,favour@intake.education,45,false,true
+1671,Sabina,Lo,sabina.lo@idp.com,1,false,true
+1675,Kedar,Prabhudesai,kedar.prabhudesai@intake.education,80,false,true
+1676,Uzma,Merchant,uzma.merchant@intake.education,80,false,true
+1679,Kimberley,Wang,kimberley.wang@intake.education,38,false,true
+1680,Dhanashree,Dhamdhere,dhanashree@intake.education,80,false,true
+1683,"Mary John L.",Saquilayan,maryjohn.saquilayan@intake.education,41,false,true
+1686,Bernadette,Abangan,bernadette.abangan@intake.education,87,false,true
+1692,Ava,Chao,ava.chao@intake.education,7,false,true
+1694,"Okiemute Charles",Ukpejebo,Charles.u@intake.education,62,false,true
+1695,Oyewumi,Oyeleke,ibadanfrontdesk@intake.education,46,false,true
+1696,Eva,Huang,eva.huang@intake.education,1,false,true
+1700,Tina,Yang,tina.yang@intake.education,38,false,true
+1702,Anne,Okorie,Enugu@intake.education,51,true,true
+1704,Alicia,Huang,alicia.huang@intake.education,5,false,true
+1707,Enugu,Intern,ConversionteamEN@intake.education,51,false,true
+1713,Vicky,Wang,vicky.wang@intake.education,7,false,true
+1716,Abuja,"Front Desk",abujafrontdesk@intake.education,45,false,true
+1723,Adith,IDP,adith.jude@idp.com,78,false,true
+1728,Pauline,"Otchere - Duah",pauline.otchere-duah@intake.education,54,false,true
+1729,"Justina Badwo",Baako,Justina.baako@intake.education,54,false,true
+1730,Lily,Yu,lily.yu@intake.education,38,false,true
+1732,FREDERICK,OPUTA,FREDERICK.OPUTA@intake.education,46,false,true
+1736,Agnes,Lesaan,agnes.lesaan@southwales.ac.uk,83,false,true
+1738,"Amber ","Kan ",amber.kan@intake.education,38,false,true
+1741,Joyce,Kimani,joyce.kimani@intake.education,83,false,true
+1742,"Geranina Joy",Lim,geraninajoy.lim@intake.education,41,false,true
+1743,"Paula Arrianne",Panganiban,paula.panganiban@intake.education,41,false,true
+1745,"Florence Nadine",Coronel,florencenadine.coronel@intake.education,41,false,true
+1746,"Aengus Martin",Donaire,aengusmartin.donaire@intake.education,41,false,true
+1747,Kenhiro,Tsumura,kenhiro.tsumura@intake.education,41,false,true
+1750,"Maria Veronica",Paglinawan,veronica.paglinawan@intake.education,87,false,true
+1752,"Patrick Timi",Adelakun,patrick.a@intake.education,51,false,true
+1753,Enugu,"Front Desk",enugufrontdesk@intake.education,51,false,true
+1759,Irene,Wang,irene.wang@intake.education,38,false,true
+1760,"Viviiane ",Lin,viviiane.lin@intake.education,7,false,true
+1762,"Janezzka Zyan",Cupcupin,janezzka.c@intake.education,41,false,true
+1763,"Jade Nicole",Roque,jade.r@intake.education,41,false,true
+1764,"Sydney Alexandra",Basman,sydney.alexandra@intake.education,41,false,true
+1770,Pamilerin,Akinbola,pamilerin.akinbola@intake.education,62,false,true
+1771,Anita,Analaba,anita.analaba@intake.education,53,false,true
+1772,James,Onyeuwaoma,james.onyeuwaoma@intake.education,51,false,true
+1773,Daisy,Don-Pedro,daisy.don-pedro@intake.education,53,false,true
+1778,Kenneth,Njuguna,kenneth.njuguna@intake.education,83,false,true
+1779,Hilda,Waweru,hilda.waweru@intake.education,83,false,true
+1785,Rowena,Liu,rowena.liu@intake.education,38,false,true
+1787,Oluwasegun,Phillips,oluwasegun.phillips@intake.education,43,false,true
+1790,Mercy,Mbugua,mercy.mbugua@intake.education,83,false,true
+1791,Supawan,Thaitin-ngarm,Supawan.thaitinngarm@intake.education,68,false,true
+1792,Sunday,Lee,sunday.lee@intake.education,1,false,true
+1799,Eseoghene,Okoro,eseoghene.okoro@intake.education,62,false,true
+1801,Daniel,Azila,daniel.azila@intake.education,75,false,true
+1802,Belinda,Yeboah,belinda.yeboah@intake.education,75,false,true
+1805,Diane,Chen,diane.chen@idp.com,2,false,true
+1810,Pwamona,Seth,pwamona.seth@idp.com,45,false,true

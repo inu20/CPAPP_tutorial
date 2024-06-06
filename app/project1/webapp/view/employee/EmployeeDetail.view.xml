@@ -1,0 +1,137 @@
+<mvc:View	controllerName="project1.controller.employee.EmployeeDetail"
+	xmlns="sap.m"
+	xmlns:uxap="sap.uxap"
+	xmlns:f="sap.f"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc">
+	<uxap:ObjectPageLayout
+		id="ObjectPageLayout"
+		showTitleInHeaderContent="true"
+		alwaysShowContentHeader="false"
+		preserveHeaderStateOnScroll="false"
+		headerContentPinnable="true"
+		isChildPage="true"
+		upperCaseAnchorBar="false">
+
+		<uxap:headerTitle>
+			<uxap:ObjectPageDynamicHeaderTitle>
+        <uxap:expandedHeading>
+          <Title text="{products>Name}" wrapping="true" class="sapUiSmallMarginEnd" />
+        </uxap:expandedHeading>
+
+        <uxap:snappedHeading>
+          <FlexBox wrap="Wrap" fitContainer="true" alignItems="Center" >
+            <FlexBox wrap="NoWrap" fitContainer="true" alignItems="Center" class="sapUiTinyMarginEnd" >
+              <Avatar src="https://ui5.sap.com/{products>ProductPicUrl}"
+                      displaySize="S"
+                      displayShape="Square"
+                      class="sapUiTinyMarginEnd"/>
+              <Title text="{products>Name}" wrapping="true" />
+            </FlexBox>
+          </FlexBox>
+        </uxap:snappedHeading>
+				
+        <uxap:actions>
+					<ToggleButton
+						text="Edit"
+						type="Emphasized"
+						press=".onEditToggleButtonPress"/>
+					<Button
+						text="Delete"
+						type="Transparent"/>
+					<Button
+						text="Copy"
+						type="Transparent"/>
+					<Button
+						icon="sap-icon://action"
+						type="Transparent"/>
+				</uxap:actions>
+			</uxap:ObjectPageDynamicHeaderTitle>
+		</uxap:headerTitle>
+
+		<uxap:headerContent>
+			<FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
+				<Avatar
+					src="https://ui5.sap.com/{products>ProductPicUrl}"
+					displaySize="L"
+					displayShape="Square"
+					class="sapUiTinyMarginEnd">
+				</Avatar>
+				<VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+					<Label text="Main Category"/>
+					<Text text="{products>MainCategory}"/>
+				</VBox>
+				<VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+					<Label text="Subcategory"/>
+					<Text text="{products>Category}"/>
+				</VBox>
+				<VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+					<Label text="Price"/>
+					<ObjectNumber number="{products>CurrencyCode} {products>Price}" emphasized="false"/>
+				</VBox>
+			</FlexBox>
+		</uxap:headerContent>
+    
+		<uxap:sections>
+			<uxap:ObjectPageSection title="General Information">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection>
+						<uxap:blocks>
+							<form:SimpleForm
+								maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								labelSpanL="12"
+								labelSpanM="12"
+								emptySpanL="0"
+								emptySpanM="0"
+								columnsL="1"
+								columnsM="1">
+								<form:content>
+									<Label text="Product ID"/>
+									<Text text="{products>ProductId}"/>
+									<Label text="Description"/>
+									<Text text="{products>Description}"/>
+									<Label text="Supplier"/>
+									<Text text="{products>SupplierName}"/>
+								</form:content>
+							</form:SimpleForm>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+
+			<uxap:ObjectPageSection title="Suppliers">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection>
+						<uxap:blocks>
+							<Table
+								id="suppliersTable"
+								items="{path : 'products>/ProductCollectionStats/Filters/1/values'}">
+								<columns>
+									<Column/>
+								</columns>
+								<items>
+									<ColumnListItem type="Navigation" press=".onSupplierPress" >
+										<cells>
+											<ObjectIdentifier text="{products>text}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+    
+		<uxap:footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button type="Accept" text="Save"/>
+				<Button type="Reject" text="Cancel"/>
+			</OverflowToolbar>
+		</uxap:footer>
+    
+	</uxap:ObjectPageLayout>
+</mvc:View>

@@ -8,7 +8,9 @@ module.exports = cds.service.impl(async function (srv){
 
   // Register your event handlers in here, e.g....
   srv.after ('READ', 'Users', each => {
-    each.Email = each.Email.replace('@intake.education', '@idp.com');
+    if ( each.Email ) {
+      each.Email = each.Email.replace('@intake.education', '@idp.com');
+    }
     each.sap_icon = '';
     if(!each.Enabled ){
       each.sap_icon = 'sap-icon://edit';

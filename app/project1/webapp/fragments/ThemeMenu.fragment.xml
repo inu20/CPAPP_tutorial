@@ -1,0 +1,29 @@
+<core:FragmentDefinition id="ThemeMenu"
+		xmlns="sap.m"
+		xmlns:core="sap.ui.core">
+
+	<Popover
+		title="Theme Menu"
+		titleAlignment="Center"
+		placement="Bottom"
+		afterClose="onPopoverClose" >
+        <List>
+            <items>
+                <StandardListItem title="Morning Horizon"	    type="Active" press="onThemeSelected('sap_horizon')"       />
+                <StandardListItem title="Evening Horizon"	    type="Active" press="onThemeSelected('sap_horizon_dark')"  />
+                <StandardListItem title="Quartz Light"	        type="Active" press="onThemeSelected('sap_fiori_3')"       />
+                <StandardListItem title="Quartz Dark"	        type="Active" press="onThemeSelected('sap_fiori_3_dark')"  />
+                <StandardListItem title="Belize"	            type="Active" press="onThemeSelected('sap_belize')"        />
+                <StandardListItem title="Belize Deep"	        type="Active" press="onThemeSelected('sap_belize_plus')"   />
+                <StandardListItem title="Blue Crystal"	        type="Active" press="onThemeSelected('sap_bluecrystal')"   />
+                <StandardListItem title="High Contrast Black"	type="Active" press="onThemeSelected('sap_horizon_hcb')"   />
+                <StandardListItem title="High Contrast White"	type="Active" press="onThemeSelected('sap_horizon_hcw')"   />
+                <StandardListItem title="High Contrast Black"	type="Active" press="onThemeSelected('sap_fiori_3_hcb')"   />
+                <StandardListItem title="High Contrast White"	type="Active" press="onThemeSelected('sap_fiori_3_hcw')"   />
+                <StandardListItem title="High Contrast Black"	type="Active" press="onThemeSelected('sap_belize_hcb')"    />
+                <StandardListItem title="High Contrast White"	type="Active" press="onThemeSelected('sap_belize_hcw')"    />
+                <StandardListItem title="High Contrast Black"	type="Active" press="onThemeSelected('sap_hcb')"           />
+            </items>
+        </List>
+	</Popover>
+</core:FragmentDefinition>

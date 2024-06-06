@@ -1,0 +1,38 @@
+<mvc:View
+	controllerName="project1.controller.employee.Resume"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	height="100%"
+	displayBlock="true">
+	<Page
+		id="employeePage"
+		title="{i18n>EmployeeDetail} | {ID}: {Full_name}"
+		showNavButton="true"
+		navButtonPress=".onNavBack"
+		class="">
+	<IconTabBar
+		id="iconTabBar"
+		headerBackgroundDesign="Transparent"
+		class="sapUiResponsiveContentPadding"
+		binding=""
+		select=".onTabSelect"
+		selectedKey="{view>/selectedTabKey}">
+		<items>
+			<IconTabFilter id="infoTab" text="{i18n>tabInfo}" key="Info">
+				<Text text="It is {=(${isManager}==='true'?'':'not')} a Manager"/>
+				<ToolbarSpacer ></ToolbarSpacer>
+				<Text text="{Email}"/>
+			</IconTabFilter>
+			<IconTabFilter id="projectsTab" text="{i18n>tabProjects}" key="Projects">
+				<mvc:XMLView viewName="project1.view.employee.ResumeProjects"></mvc:XMLView>
+			</IconTabFilter>
+			<IconTabFilter id="hobbiesTab" text="{i18n>tabHobbies}" key="Hobbies">
+				<Text text="This is Hobbies {Office/Country_code}"/>
+			</IconTabFilter>
+			<IconTabFilter id="notesTab" text="{i18n>tabNotes}" key="Notes">
+				<Text text="This is a note {Office/Country_Name}"/>
+			</IconTabFilter>
+		</items>
+	</IconTabBar>
+	</Page>
+</mvc:View>

@@ -1,0 +1,24 @@
+<mvc:View
+	controllerName="project1.controller.employee.overview.EmployeeOverview"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page id="EmployeeOverviewPage" title="{i18n>EmployeeOverview}"
+		showNavButton="true"
+		navButtonPress=".onNavBack"
+		class="">
+		<l:FixFlex class="fixFlexHorizontal" vertical="false">
+			<l:fixContent>
+				<mvc:XMLView viewName="project1.view.module.MainSideMenu"/>
+			</l:fixContent>
+			<l:flexContent>
+			<Page
+				id="EmployeeOverviewParent" showHeader="false" >
+                <content>
+                    <!-- inserted by routing -->
+                </content>
+            </Page>
+			</l:flexContent>
+		</l:FixFlex>
+	</Page>
+</mvc:View>

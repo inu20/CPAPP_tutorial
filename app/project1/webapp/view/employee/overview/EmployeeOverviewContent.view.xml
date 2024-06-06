@@ -1,0 +1,206 @@
+<mvc:View
+	controllerName="project1.controller.employee.overview.EmployeeOverviewContent"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:c="sap.ui.core"
+  xmlns:vm="sap.ui.fl.variants"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:plugins="sap.m.plugins"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:svm="sap.ui.comp.smartvariants"
+  xmlns:wmain="sap.ui.webc.main"
+	height="100%">
+
+	<f:DynamicPage id="page" headerExpanded="true" toggleHeaderOnTitleClick="true" showFooter="false" >
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="Employees" />
+				</f:heading>
+				<f:expandedContent>
+          <HBox wrap="Wrap">
+            <VBox class="sapUiMediumMarginEnd">
+              <Label id="expandedLabel" text="No filters active" />
+            </VBox>
+            <VBox class="sapUiMediumMarginEnd" >
+              <ObjectAttribute title="Availability"></ObjectAttribute>
+              <ObjectStatus text="Enable" state="Success"></ObjectStatus>
+            </VBox>
+            <VBox class="sapUiMediumMarginEnd">
+              <ObjectAttribute title="Location" text="Taiwan"></ObjectAttribute>
+            </VBox>
+          </HBox>
+				</f:expandedContent>
+				<f:snappedContent>
+          <HBox wrap="Wrap">
+            <VBox class="">
+            </VBox>
+            <VBox class="sapUiMediumMarginEnd" >
+              <wmain:Badge text="Enable" colorScheme="8" />
+            </VBox>
+            <VBox class="sapUiMediumMarginEnd" >
+              <ObjectAttribute title="Location" text="Taiwan"></ObjectAttribute>
+            </VBox>
+          </HBox>
+				</f:snappedContent>
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:header>
+			<f:DynamicPageHeader pinnable="true">
+				<fb:FilterBar 
+					id="filterbar"
+					persistencyKey="myPersKey"
+					useToolbar="false"
+					search=".onSearchEmployeesTable2"
+					filterChange=".onFilterChange"
+					afterVariantLoad=".onAfterVariantLoad"
+					>
+					<fb:filterGroupItems>
+						<fb:FilterGroupItem name="Forename" label="Forename" groupName="Group_Forename" visibleInFilterBar="true" >
+							<fb:control>
+								<Input id="Forename_Input" />
+							</fb:control>
+						</fb:FilterGroupItem>
+						<fb:FilterGroupItem name="Surname" label="Surname" groupName="Group_Surname" visibleInFilterBar="true" >
+							<fb:control>
+								<Input id="Surname_Input" />
+							</fb:control>
+						</fb:FilterGroupItem>
+						<fb:FilterGroupItem name="Email" label="Email" groupName="Group_Email" visibleInFilterBar="true" >
+							<fb:control>
+								<Input id="Email_Input" />
+							</fb:control>
+						</fb:FilterGroupItem>
+						<fb:FilterGroupItem visible="false" name="Office" label="Office" groupName="Group_Office" visibleInFilterBar="true" >
+							<fb:control>
+								<MultiInput
+									id="Office_ID_Input"
+									showValueHelp="true"
+									suggestionItems="{
+										path: '/Offices',
+										sorter: { path: 'Name' }
+									}"
+									valueHelpRequest=".onOfficeValueHelpRequest"
+									tokenUpdate=".onTokenUpdate">
+									<suggestionItems>
+										<c:ListItem
+											key="{ID}"
+											text="{Name}"
+											additionalText="{Country_Name}" />
+									</suggestionItems>
+								</MultiInput>
+							</fb:control>
+						</fb:FilterGroupItem>
+					</fb:filterGroupItems>
+				</fb:FilterBar>
+				<HBox wrap="Wrap" alignItems="Start" justifyContent="End">
+					<VBox class="sapUiMediumMarginEnd">
+						<Button id="ClearSearchButton"  text="Clear Filter" 	press=".onClearSearch_form2"/>
+					</VBox>
+					<VBox class="sapUiMediumMarginEnd">
+					</VBox>
+				</HBox>
+			</f:DynamicPageHeader>
+		</f:header>
+		<f:content>
+		<Table id="employeesTable"
+				width="auto"
+				fixedLayout="Strict"
+				sticky="HeaderToolbar,ColumnHeaders"
+				class="sapFDynamicPageAlignContent"
+				growing="true"
+				growingThreshold="30"
+              	growingScrollToLoad="true"
+				mode="MultiSelect"
+				selectionChange="onSelectionChange"
+				items="{
+					path: '/Users',
+					parameters: {
+						$count: true
+					},
+					events: {
+						change: '.onTableResultChange'
+					}
+				}">
+			<headerToolbar>
+				<Toolbar>
+					<Title id="tblTitle" text="{i18n>TotalResults}  ( {= ${/Users/$count} > ${_PageElements>/Results_cnt}? ${_PageElements>/Results_cnt}+' / ' :''}{/Users/$count} )" level="H2"/>
+                    <ToolbarSeparator/>
+                    <vm:VariantManagement for="persoTable"/>
+					<ToolbarSpacer />
+					<ToolbarSeparator />
+					<SearchField id="searchField" width="20%" search=".onSearchEmployeesTable"
+							liveChange=".onLiveSearch"/>
+					<ToolbarSeparator />
+					<Button id="addUsersButton" 	icon="sap-icon://add" 	press=".openAddUserFragment"/>
+					<Button id="sortUsersButton" 	icon="sap-icon://sort" 	press=".onSortButtonPressed"/>
+					<Button
+						id="refreshUsersButton"
+						icon="sap-icon://refresh"
+						tooltip="{i18n>refreshButtonText}"
+						press=".onRefresh"/>
+					<Button id="tableSettingButton" 	icon="sap-icon://action-settings" 	press=".openTableSettingFragment"/>
+				</Toolbar>
+			</headerToolbar>
+			<dependents>
+				<plugins:ColumnResizer columnResize="onColumnResize"/>
+			</dependents>
+			<columns>
+				<Column width="125px" 	id="employeeActionCol"	><Text text="{i18n>ActionCol}"/></Column>
+				<Column width="" 		id="employeeIDCol"		><Text text="{i18n>EmployeeID}"/></Column>
+				<Column width="" 		id="firstNameCol"		demandPopin="true"><Text text="{i18n>formForename}"/></Column>
+				<Column width="" 		id="lastNameCol"		demandPopin="true"><Text text="{i18n>formSurname}"/></Column>
+				<Column width="" 		id="addressCol"			demandPopin="true" minScreenWidth="Tablet" ><Text text="{i18n>formEmail}"/></Column>
+				<Column width="" 		id="countryCol"			demandPopin="true" minScreenWidth="Tablet" ><Text text="{i18n>formCountry}"/></Column>
+				<Column width="" 		id="regionCol"			demandPopin="true" minScreenWidth="Tablet" ><Text text="{i18n>formRegion}"/></Column>
+				<Column width="" 		id="isManagerCol"		demandPopin="true" minScreenWidth="Tablet"  hAlign="Center"><Text text="{i18n>formIsManager}"/></Column>
+				<Column width="" 		id="EnabledCol"			demandPopin="true" minScreenWidth="Tablet"  hAlign="Center"><Text text="{i18n>formEnabled}"/></Column>
+			</columns>
+			<items>
+				<ColumnListItem
+					type="Active"
+					vAlign="Middle">
+					<cells>
+						<SegmentedButton selectionChange="handleSelectionChange">
+							<items>
+								<SegmentedButtonItem icon="sap-icon://edit" 	press=".onListItemPressed"		></SegmentedButtonItem>
+								<SegmentedButtonItem icon="sap-icon://email" 	press=".onEmailPressed"			></SegmentedButtonItem>
+								<SegmentedButtonItem icon="sap-icon://delete" 	press=".onRemoveUsersPressed"	></SegmentedButtonItem>
+							</items>
+						</SegmentedButton>
+						
+						<Text text="{ID}" />
+						<Text text="{Forename}" />
+						<Text text="{Surname}"/>
+						<Text text="{Email}"/>
+						<Text text="{Office/Country_Name}"/>
+						<HBox>
+							<Text text="{Office/Name}"/>
+						</HBox>
+						
+						<c:Icon src="{=${isManager}	==='Yes' ? 'sap-icon://accept'	: 'sap-icon://cancel'}" color="{=${isManager}	==='Yes' ? 'green' : 'red'}" visible="{= ${isManager} }" />
+						<c:Icon src="{=${Enabled}	==='Yes' ? 'sap-icon://less' 	: 'sap-icon://cancel'}" color="{=${Enabled}		==='Yes' ? 'gray'  : 'red'}"  />
+						<Text text="{isManager}" />
+						<Text text="{Enabled}"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		</f:content>
+		<f:footer>
+			<OverflowToolbar id="otbFooter">
+				<Text text="{_PageElements>/Selected_cnt} item{=${_PageElements>/Selected_cnt}>1?'s':''} selected" class="sapUiSmallMarginBegin" />
+				<ToolbarSpacer/>
+				<Button type="Accept" id="Bulk_UpdateUsersButton" text="Bulk Update" icon="sap-icon://edit" 	press=".onBulkUpdateUsersPressed" enabled="false" >
+					<layoutData><OverflowToolbarLayoutData priority="NeverOverflow" /></layoutData>
+				</Button>
+				<Button type="Reject" id="Bulk_RemoveUsersButton" text="Bulk Delete" icon="sap-icon://delete" 	press=".onBulkRemoveUsersPressed" enabled="false" >
+					<layoutData><OverflowToolbarLayoutData/></layoutData>
+				</Button>
+
+			</OverflowToolbar>
+		</f:footer>
+	</f:DynamicPage>
+
+</mvc:View>

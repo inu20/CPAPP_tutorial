@@ -1,0 +1,15 @@
+<mvc:View 
+	controllerName="project1.controller.employee.Employee_ColumnLayout"
+	xmlns="sap.m"
+  xmlns:f="sap.f"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+	height="100%">
+	<Page showHeader="false" >
+    <f:FlexibleColumnLayout
+      id="flexibleColumnLayout"
+      stateChange=".onStateChanged"
+      backgroundDesign="Solid"
+      layout="{_ColumnLayout>/layout}" />
+	</Page>
+</mvc:View>

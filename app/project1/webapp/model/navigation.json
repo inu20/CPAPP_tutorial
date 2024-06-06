@@ -1,0 +1,190 @@
+{
+	"selectedKey": "home",
+	"CurrentPage": {
+		"title": "Home"
+	},
+	"navigation": [
+		{
+			"title": "Home",
+			"icon": "home",
+			"key": "home"
+		},
+		{
+			"title": "Employee",
+			"icon": "employee",
+			"key": "employeeList",
+			"items": [
+				{
+					"title": "Employee List",
+					"key": "employeeList"
+				},
+				{
+					"title": "Employee Overview",
+					"key": "employeeOverview"
+				}
+			]
+		},
+		{
+			"PageTitle": "SAPUI5 Example 1",
+			"title": "Example",
+			"icon": "history",
+			"key": "ExamplePage"
+		},
+		{
+			"title": "Calendar",
+			"icon": "sap-icon://calendar",
+			"key": "teamCalendar"
+		},
+		{
+			"PageTitle": "MultiInput Example",
+			"title": "Example 2",
+			"icon": "history",
+			"key": "ExamplePage2"
+		},
+		{
+			"PageTitle": "Employee ColumnLayout",
+			"title": "Employee ColumnLayout",
+			"icon": "history",
+			"key": "employeeList2"
+		},
+		{
+			"title": "Statistics",
+			"icon": "line-chart",
+			"key": "statistics"
+		},
+		{
+			"title": "Prospect",
+			"icon": "sap-icon://leads",
+			"expanded": false,
+			"items": [
+				{
+					"title": "Leads",
+					"key": "leads"
+				},
+				{
+					"title": "Opportunities"
+				}
+			]
+		},
+		{
+			"title": "Customers",
+			"icon": "sap-icon://customer-and-contacts",
+			"expanded": false,
+			"items": [
+				{
+					"title": "Accounts"
+				},
+				{
+					"title": "Contacts"
+				},
+				{
+					"title": "Individual Customers"
+				}
+			]
+		},
+		{
+			"title": "Event",
+			"icon": "sap-icon://sound",
+			"expanded": false,
+			"items": [
+				{
+					"title": "Events"
+				},
+				{
+					"title": "Leads"
+				}
+			]
+		},
+		{
+			"title": "Activities",
+			"icon": "sap-icon://activities",
+			"expanded": false,
+			"items": [
+				{
+					"title": "Appointments"
+				},
+				{
+					"title": "E-Mails"
+				},
+				{
+					"title": "Phone Calls"
+				},
+				{
+					"title": "Tasks"
+				},
+				{
+					"title": "Chats"
+				}
+			]
+		},
+		{
+			"title": "Analysis",
+			"icon": "sap-icon://customer-view",
+			"expanded": false,
+			"items": [
+				{
+					"title": "Dashboard"
+				},
+				{
+					"title": "Reports"
+				}
+			]
+		},
+		{
+			"title": "Service",
+			"icon": "sap-icon://official-service",
+			"expanded": false,
+			"items": [
+				{
+					"title": "Tickets"
+				},
+				{
+					"title": "Templates"
+				}
+			]
+		}
+	],
+	"fixedNavigation": [
+		{
+			"title": "Team Calendar",
+			"icon": "sap-icon://appointment"
+		},
+		{
+			"title": "Employees",
+			"icon": "sap-icon://employee"
+		},
+		{
+			"title": "Document Library",
+			"icon": "sap-icon://documents"
+		}
+	],
+	"headerItems": [
+		{
+			"text": "File"
+		},
+		{
+			"text": "Edit"
+		},
+		{
+			"text": "View"
+		},
+		{
+			"text": "Settings"
+		},
+		{
+			"text": "Help"
+		}
+	],
+	"toprightmenu": [
+		{
+			"title": "profile",
+			"icon": "sap-icon://account",
+			"key": "profile"
+		},
+		{
+			"title": "Settings",
+			"icon": "sap-icon://action-settings",
+			"key": "setting"
+		}
+	]
+}
