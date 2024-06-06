@@ -35,7 +35,21 @@ entity Users : managed {
       Email          : String;
       Office         : Association to Offices default 0;
       isManager      : Boolean default false;
+      Role           : String default null;
+      Password       : String default null;
+      OnBoard        : Date default '0000-00-00';
+      Description    : LargeString default null;
+      Price          : Decimal(10, 2) default 0.00;
+      Last_login     : DateTime default null;
       Enabled        : Boolean default true;
+      Status         : UInt8 enum {
+        active                = 1;
+        locked                = 2;
+        pws_expired           = 3;
+      } default 1;
+
+      Students       : Association to many Students
+                         on Students.Advisor = $self;
 }
 
 entity Students : managed {
