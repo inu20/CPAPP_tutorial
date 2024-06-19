@@ -20,7 +20,7 @@
 			<l:BlockLayoutRow>
 				<l:BlockLayoutCell class="sapUiNoContentPadding">
 					<Image
-						src="https://www.idp.com/medias/6.10-IDP-Virutal-Counselling-Header-1366x446.png?context=bWFzdGVyfGltYWdlc3wxNzQ0MjF8aW1hZ2UvcG5nfGFERXpMMmcyWWk4eE1EQTBOamd4TWprME5qUTJNaTgyTGpFd0xVbEVVQzFXYVhKMWRHRnNMVU52ZFc1elpXeHNhVzVuTFVobFlXUmxjaTB4TXpZMmVEUTBOaTV3Ym1jfDg4MWRjZjkzNWY2NTg5OTE4NGMxOTNhYTA2NjZiYzI0NWRhOTk1NTM4OTkzNDBmYzE3NGFiNjM1NmNiNTk1YjM"
+						src="images/Banner.png"
 						width="100%"
 						height="100%"/>
 				</l:BlockLayoutCell>
