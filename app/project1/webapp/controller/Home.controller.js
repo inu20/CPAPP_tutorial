@@ -58,7 +58,7 @@ sap.ui.define([
 				ID 		: iStudentID,
 				Status 	: iStatus
 			};
-			fetch(Config.baseUrl+"/admin/UPDATE_Student_CRM_Status", {
+			fetch("/admin/UPDATE_Student_CRM_Status", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

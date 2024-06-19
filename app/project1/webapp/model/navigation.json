@@ -36,6 +36,11 @@
 			"key": "teamCalendar"
 		},
 		{
+			"title": "Leads CRM",
+			"icon": "leads",
+			"key": "StudentList"
+		},
+		{
 			"PageTitle": "MultiInput Example",
 			"title": "Example 2",
 			"icon": "history",

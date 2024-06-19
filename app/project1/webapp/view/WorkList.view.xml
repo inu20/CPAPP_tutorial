@@ -1,0 +1,211 @@
+<mvc:View
+	controllerName="project1.controller.WorkList"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:commons="sap.suite.ui.commons"
+  >
+	<f:DynamicPage id="dynamicPageId"
+    headerExpanded="true" toggleHeaderOnTitleClick="true" showFooter="false"
+    stickySubheaderProvider="idIconTabBar"
+    class="sapUiNoContentPadding" >
+    
+			<!-- DynamicPage Title -->
+			<f:title>
+				<f:DynamicPageTitle>
+					<f:heading>
+						<Title text="Header Title"/>
+					</f:heading>
+					<f:expandedContent>
+						<Label text="This is a subheading"/>
+					</f:expandedContent>
+					<f:snappedContent>
+					</f:snappedContent>
+					<f:actions>
+						<Button icon="sap-icon://action" type="Transparent"/>
+					</f:actions>
+				</f:DynamicPageTitle>
+			</f:title>
+
+			<f:header>
+			<f:DynamicPageHeader pinnable="true">
+				<HBox wrap="Wrap" alignItems="Start" justifyContent="End">
+					<VBox class="sapUiMediumMarginEnd">
+					</VBox>
+					<VBox class="sapUiMediumMarginEnd">
+					</VBox>
+				</HBox>
+			</f:DynamicPageHeader>
+		</f:header>
+  		<!-- DynamicPage Content -->
+		<f:content>
+        <IconTabBar applyContentPadding="false"
+            id="idIconTabBar"
+            select=".onFilterSelect"
+            expandable="false"
+            class="">
+            <items>
+            <IconTabFilter
+                showAll="true"
+                count="{/Students/$count}"
+                text="Leads"
+                key="All" />
+            <IconTabSeparator />
+            
+            <IconTabFilter
+                icon="sap-icon://information"
+                iconColor="Default"
+                design="Horizontal"
+                count="{_PageElements>/CRM_Status/1/cnt}"
+                text="CS"
+                key="1" />
+            <IconTabSeparator icon="sap-icon://process"/>
+            <IconTabFilter
+                icon="sap-icon://begin"
+                iconColor="Positive"
+                design="Horizontal"
+                count="{_PageElements>/CRM_Status/2/cnt}"
+                text="DC"
+                key="2" />
+            <IconTabSeparator icon="sap-icon://process"/>
+            <IconTabFilter
+                icon="sap-icon://documents"
+                iconColor="Positive"
+                design="Horizontal"
+                count="{_PageElements>/CRM_Status/3/cnt}"
+                text="AP"
+                key="3" >
+                <customData>
+                    <BadgeCustomData visible="true" />
+                </customData>
+                <items>
+					<IconTabFilter text="Attachment one">
+						<Text text="Attachment one goes here..." />
+					</IconTabFilter>
+					<IconTabFilter text="Attachment two">
+						<Text text="Attachment two goes here..." />
+					</IconTabFilter>
+				</items>
+
+                </IconTabFilter>
+            <IconTabSeparator icon="sap-icon://process"/>
+            <IconTabFilter
+                icon="sap-icon://favorite"
+                iconColor="Critical"
+                design="Horizontal"
+                count="{_PageElements>/CRM_Status/4/cnt}"
+                text="FC"
+                key="4" />
+            <IconTabSeparator />
+            <IconTabFilter
+                icon="sap-icon://cancel"
+                iconColor="Negative"
+                design="Horizontal"
+                count="{_PageElements>/CRM_Status/5/cnt}"
+                text="LF"
+                key="5" />
+
+            </items>
+            <content>
+            <Table
+                id="CRM_Table"
+                inset="false"
+                showSeparators="Inner"
+                headerText=""
+                fixedLayout="Strict"
+                sticky="HeaderToolbar,ColumnHeaders"
+                growing="true"
+                growingThreshold="30"
+                        growingScrollToLoad="true"
+                class=""
+                updateFinished=".onTableUpdateFinshed"
+                items="{
+                    path: '/Students',
+                    sorter: {
+                    path: 'Full_name'
+                    },
+                    parameters: {
+                    $count: true
+                    },
+                    events: {
+                    change: '.onTableResultChange'
+                    }
+                }">
+            <headerToolbar>
+                <Toolbar>
+                    <Title
+                        id="tableHeader"
+                        text="Leads"/>
+                    <ToolbarSpacer/>
+                    <SearchField
+                        id="searchField"
+                        tooltip=""
+                        search=".onSearch"
+                        width="auto">
+                    </SearchField>
+                </Toolbar>
+            </headerToolbar>
+            <infoToolbar>
+                <OverflowToolbar>
+                <Label text="Scroll down for more data"/>
+                </OverflowToolbar>
+            </infoToolbar>
+            <columns>
+                <Column>
+                <Text text="Student" />
+                </Column>
+                <Column
+                minScreenWidth="Tablet"
+                demandPopin="true">
+                <Text text="Advisor" />
+                </Column>
+                <Column
+                minScreenWidth="Tablet"
+                demandPopin="true">
+                <Text text="Country" />
+                </Column>
+                <Column
+                demandPopin="true">
+                <Text text="Gender" />
+                </Column>
+                <Column
+                demandPopin="true">
+                <Text text="CRM_Status" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem
+                    type="Navigation"
+                    press=".onPress">
+                <cells>
+                    <ObjectIdentifier
+                        title="{Full_name}"
+                        text="{ID}"/>
+                    <Text
+                    text="{Advisor/Full_name}" />
+                    <Text text="{Office/Country_Name}"/>
+                    <Text
+                    text="{Gender}" />
+                        <commons:MicroProcessFlow renderType="Scrolling" width="100%" >
+                            <commons:content>
+                                <commons:MicroProcessFlowItem state="{=(${CRM_Status}>='1'?'Information'	:'None')}" key="1"  press="onPressCRM_Status" icon=""                          />
+                                <commons:MicroProcessFlowItem state="{=(${CRM_Status}>='2'?'Success'	    :'None')}" key="2"  press="onPressCRM_Status" icon="sap-icon://begin"          />
+                                <commons:MicroProcessFlowItem state="{=(${CRM_Status}>='3'?'Success'	    :'None')}" key="3"  press="onPressCRM_Status" icon="sap-icon://documents"      />
+                                <commons:MicroProcessFlowItem state="{=(${CRM_Status}>='4'?'Warning'	    :'None')}" key="4"  press="onPressCRM_Status" icon="sap-icon://favorite"       />
+                                <commons:MicroProcessFlowItem state="{=(${CRM_Status}>='5'?'Error'          :'None')}" key="5"  press="onPressCRM_Status" icon="sap-icon://cancel"         />
+                            </commons:content>
+                        </commons:MicroProcessFlow>
+                </cells>
+                </ColumnListItem>
+            </items>
+            </Table>
+            </content>
+        </IconTabBar>
+		</f:content>
+
+		<!-- DynamicPage Footer -->
+		<f:footer>
+		</f:footer>
+	</f:DynamicPage>
+
+</mvc:View>

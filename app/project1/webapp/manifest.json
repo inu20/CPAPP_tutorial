@@ -207,6 +207,13 @@
           ]
         },
         {
+          "pattern": "leads",
+          "name": "StudentList",
+          "target": [
+            "studentList"
+          ]
+        },
+        {
           "pattern": "employees1",
           "name": "employees1",
           "target": [
@@ -314,6 +321,11 @@
           "viewId": "sap_example2",
           "viewPath": "project1.view",
           "viewName": "ValueHelpDialog"
+        },
+        "studentList": {
+          "viewId": "studentList",
+          "viewPath": "project1.view",
+          "viewName": "Worklist"
         },
         "Employee_ColumnLayout": {
           "viewId": "Employee_ColumnLayout",

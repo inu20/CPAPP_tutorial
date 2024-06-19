@@ -321,7 +321,7 @@ sap.ui.define(
           //       "Office_ID": 1
           //     }
 
-          fetch(Config.baseUrl+"/admin/CREATE_NewUser", {
+          fetch("/admin/CREATE_NewUser", {
               method: "POST",
               headers: {
                   "Content-Type": "application/json",

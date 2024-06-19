@@ -34,3 +34,7 @@ html .sapMListTblCell .sapSuiteUiCommonsMicroProcessFlowItem .sapUiIcon:not(.sap
 .sapUiCalendarRowApps {
 	overflow: hidden;
 }
+
+.sapUiTheme-sap_horizon_dark .sapMITH:not(.sapMITBTextOnly) .sapMITBSelected .sapUiIcon {
+	color: #ffffffee !important;
+}

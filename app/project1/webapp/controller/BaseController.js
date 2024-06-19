@@ -1,149 +1,191 @@
-sap.ui.define([
-	"sap/ui/core/mvc/Controller",
-	"sap/ui/core/routing/History",
-	"sap/ui/core/UIComponent",
-  	"sap/ui/core/Fragment",
-	"sap/ui/model/json/JSONModel",
-    "sap/m/MessageToast",
-    "sap/m/MessageBox",
-	"project1/config/Config",
-], function(
-	Controller, History, UIComponent, Fragment,
-	JSONModel,
-    MessageToast,
-    MessageBox,
-	Config,
-) {
-	"use strict";
+sap.ui.define(
+	[
+		"sap/ui/core/mvc/Controller",
+		"sap/ui/core/routing/History",
+		"sap/ui/core/UIComponent",
+		"sap/ui/core/Fragment",
+		"sap/ui/model/json/JSONModel",
+		"sap/m/MessageToast",
+		"sap/m/MessageBox",
+		"project1/config/Config",
+	],
+	function (
+		Controller,
+		History,
+		UIComponent,
+		Fragment,
+		JSONModel,
+		MessageToast,
+		MessageBox,
+		Config
+	) {
+		"use strict";
 
-	return Controller.extend("project1.controller.BaseController", {
-		onInit: function () {
-		},
+		return Controller.extend("project1.controller.BaseController", {
+			onInit: function () {},
 
-		/**
-		 * Convenience method for accessing the router.
-		 * @public
-		 * @returns {sap.ui.core.routing.Router} the router for this component
-		 */
-		getRouter : function () {
-			return UIComponent.getRouterFor(this);
-		},
+			/**
+			 * Convenience method for accessing the router.
+			 * @public
+			 * @returns {sap.ui.core.routing.Router} the router for this component
+			 */
+			getRouter: function () {
+				return UIComponent.getRouterFor(this);
+			},
 
-		/**
-		 * Convenience method for getting the view model by name.
-		 * @public
-		 * @param {string} [sName] the model name
-		 * @returns {sap.ui.model.Model} the model instance
-		 */
-		getModel : function (sName) {
-			return this.getView().getModel(sName);
-		},
+			/**
+			 * Convenience method for getting the view model by name.
+			 * @public
+			 * @param {string} [sName] the model name
+			 * @returns {sap.ui.model.Model} the model instance
+			 */
+			getModel: function (sName) {
+				return this.getView().getModel(sName);
+			},
 
-		/**
-		 * Convenience method for setting the view model.
-		 * @public
-		 * @param {sap.ui.model.Model} oModel the model instance
-		 * @param {string} sName the model name
-		 * @returns {sap.ui.mvc.View} the view instance
-		 */
-		setModel : function (oModel, sName) {
-            if ( oModel!==undefined && typeof oModel.dataLoaded !=='function' ) {
-                oModel = new JSONModel(oModel);
-            }
-            return this.getView().setModel(oModel, sName);
-		},
-
-		/**
-		 * Returns a promises which resolves with the resource bundle value of the given key <code>sI18nKey</code>
-		 *
-		 * @public
-		 * @param {string} sI18nKey The key
-		 * @param {sap.ui.core.model.ResourceModel} oResourceModel The resource model
-		 * @param {string[]} [aPlaceholderValues] The values which will repalce the placeholders in the i18n value
-		 * @returns {Promise<string>} The promise
-		 */
-		getBundleTextByModel: function(sI18nKey, oResourceModel, aPlaceholderValues){
-			return oResourceModel.getResourceBundle().then(function(oBundle){
-				return oBundle.getText(sI18nKey, aPlaceholderValues);
-			});
-		},
-
-		onNavBack: function () {
-			var oHistory, sPreviousHash;
-
-			oHistory = History.getInstance();
-			sPreviousHash = oHistory.getPreviousHash();
-
-			if (sPreviousHash !== undefined || window.history.length>0 ) {
-				window.history.go(-1);
-			} else {
-				this.getRouter().navTo("home", {}, true /*no history*/);
-			}
-		},
-
-		onCopyText: function (oEvent) {
-			let sVal = oEvent.getSource().getValue();
-			if( typeof sVal==='string' && sVal ){
-				if( navigator.clipboard.writeText( sVal ) ){
-					MessageToast.show(`Copy to clipboard:\n${sVal}`);
+			/**
+			 * Convenience method for setting the view model.
+			 * @public
+			 * @param {sap.ui.model.Model} oModel the model instance
+			 * @param {string} sName the model name
+			 * @returns {sap.ui.mvc.View} the view instance
+			 */
+			setModel: function (oModel, sName) {
+				if (oModel !== undefined && typeof oModel.dataLoaded !== "function") {
+					oModel = new JSONModel(oModel);
 				}
-				else{
-					MessageToast.show(`Faild to copy to clipboard.`);
-				}
-			}
-		},
+				return this.getView().setModel(oModel, sName);
+			},
 
-		geti18nText: function ( sTextName ) {
-          var sObjNum = this.getOwnerComponent().getModel("i18n").getResourceBundle();
-          return sObjNum.getText(sTextName);
-		},
-
-        loadFragment: function ( sPath ){
-            return Fragment.load({
-                    id: this.getView().getId(),
-                    name: sPath,
-                    controller: this
+			/**
+			 * Returns a promises which resolves with the resource bundle value of the given key <code>sI18nKey</code>
+			 *
+			 * @public
+			 * @param {string} sI18nKey The key
+			 * @param {sap.ui.core.model.ResourceModel} oResourceModel The resource model
+			 * @param {string[]} [aPlaceholderValues] The values which will repalce the placeholders in the i18n value
+			 * @returns {Promise<string>} The promise
+			 */
+			getBundleTextByModel: function (
+				sI18nKey,
+				oResourceModel,
+				aPlaceholderValues
+			) {
+				return oResourceModel.getResourceBundle().then(function (oBundle) {
+					return oBundle.getText(sI18nKey, aPlaceholderValues);
 				});
-        },
+			},
 
-		CallAPI: async function ( sUrl, oPostData={}, sMethod='POST', oSettings={} ) {
-			return fetch( sUrl, {
-				method	:( oSettings.method  || sMethod || 'POST' ),
-				headers	:( oSettings.headers ||{
-					"Content-Type": "application/json",
-				} ),
-				body: JSON.stringify(oPostData),
-			})
-			.then(response => response.json())
-		},
+			onNavBack: function () {
+				var oHistory, sPreviousHash;
 
-        // ...
-		handleDeleteUser: async function (aUser_id, fnSuccess=function(){}, fnFailed=function(){}) {
-          if(!aUser_id ) return
+				oHistory = History.getInstance();
+				sPreviousHash = oHistory.getPreviousHash();
 
-		  if( typeof aUser_id!=='object' ){
-		  	aUser_id = [aUser_id]
-		  }
-
-          var oPostData ={
-              ID : aUser_id
-            }
-          
-		  this.CallAPI(Config.baseUrl+"/admin/DELETE_User", oPostData )
-			.then(data => {
-				// Handle the response data
-				console.log("user", data);
-				if( data.error?.code ){
-					MessageToast.show(`${data.error.code}: ${data.error.target}\n${data.error.message}`);
-					fnFailed(data)
+				if (sPreviousHash !== undefined || window.history.length > 0) {
+					window.history.go(-1);
+				} else {
+					this.getRouter().navTo("home", {}, true /*no history*/);
 				}
-				else{
-					MessageToast.show(`User DELETED:\n${data.user.Forename} (${data.ID})`);
-					fnSuccess(data)
-				}
-			})
-        },
+			},
 
-		
-	});
-});
+			onCopyText: function (oEvent) {
+				let sVal = oEvent.getSource().getValue();
+				if (typeof sVal === "string" && sVal) {
+					if (navigator.clipboard.writeText(sVal)) {
+						MessageToast.show(`Copy to clipboard:\n${sVal}`);
+					} else {
+						MessageToast.show(`Faild to copy to clipboard.`);
+					}
+				}
+			},
+
+			geti18nText: function (sTextName) {
+				var sObjNum = this.getOwnerComponent()
+					.getModel("i18n")
+					.getResourceBundle();
+				return sObjNum.getText(sTextName);
+			},
+
+			loadFragment: function (sPath) {
+				return Fragment.load({
+					id: this.getView().getId(),
+					name: sPath,
+					controller: this,
+				});
+			},
+
+			CallAPI: async function (
+				sUrl,
+				oPostData = null,
+				sMethod = "POST",
+				oSettings = null
+			) {
+				if (oPostData === null) sMethod = "GET";
+                if (sMethod === 'POST') {
+                    oPostData = JSON.stringify(oPostData);
+                }
+                
+                return new Promise((resolve, reject) => {
+                    $.ajax({
+                        'cache'	: false,
+                        'async'	: false,
+                        'type'	: oSettings?.method || sMethod || "POST",
+                        contentType : 'application/json; charset=utf-8',
+
+                        'url': sUrl,
+                        'data': oPostData,
+                        'success': function(res) {
+                            // your success logic
+                            resolve(res);
+                        },
+                        'error': function(error) {
+                            // your error logic
+                            console.group('AjaxPost warning: '+sUrl);
+                            console.log( error );
+                            console.groupEnd();
+                        }
+                    })
+					.then((res) => {
+						return ( typeof res === 'string' ? res.json() : res);
+					});
+                });
+			},
+
+			// ...
+			handleDeleteUser: async function (
+				aUser_id,
+				fnSuccess = function () {},
+				fnFailed = function () {}
+			) {
+				if (!aUser_id) return;
+
+				if (typeof aUser_id !== "object") {
+					aUser_id = [aUser_id];
+				}
+
+				var oPostData = {
+					ID: aUser_id,
+				};
+
+				this.CallAPI("/admin/DELETE_User", oPostData).then(
+					(data) => {
+						// Handle the response data
+						console.log("user", data);
+						if (data.error?.code) {
+							MessageToast.show(
+								`${data.error.code}: ${data.error.target}\n${data.error.message}`
+							);
+							fnFailed(data);
+						} else {
+							MessageToast.show(
+								`User DELETED:\n${data.user.Forename} (${data.ID})`
+							);
+							fnSuccess(data);
+						}
+					}
+				);
+			},
+		});
+	}
+);
